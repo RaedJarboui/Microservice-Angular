@@ -1,0 +1,30 @@
+<h2> Personnel List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Nom</th>
+            <th> Prenom </th>
+            <th> Email</th>
+            <th> Adresse </th>
+            <th> Departement</th>
+            <th> Numéro de Telephone </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let p of personnels" >
+            <td> {{ p.nom }} </td>
+            <td> {{ p.prenom }} </td>
+            <td> {{ p.email }} </td>
+            <td> {{ p.adresse }} </td>
+            <td> {{ p.pays }} </td>
+            <td> {{ p.departement }} </td>
+            <td> {{ p.numTel }} </td>
+            <td>
+                <button (click) = "updatePersonnel(p.id)" class = "btn btn-info"> Update</button>
+                <button (click) = "deletePersonnel(p.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "PersonnelDetails(p.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<a routerLink="/add/aero"><button class="btn btn-success pull-right" > Add Personnel</button></a>
