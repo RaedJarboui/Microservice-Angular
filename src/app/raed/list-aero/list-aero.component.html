@@ -1,0 +1,24 @@
+<h2> Aero List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Nom</th>
+            <th> Pays </th>
+            <th> Ville</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let a of aeros" >
+            <td> {{ a.nom }} </td>
+            <td> {{ a.pays }} </td>
+            <td> {{ a.ville }} </td>
+            <td>
+                <button (click) = "updateAero(a.id)" class = "btn btn-info"> Update</button>
+                <button (click) = "deleteAero(a.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "AeroDetails(a.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<a routerLink="/add/aero"><button class="btn btn-success pull-right" > Add aero</button></a>
